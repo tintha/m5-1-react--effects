@@ -10,6 +10,7 @@ const Item = (props) => {
   const setUseRef = () => {
     if (btnRef && isFirstItem === true) {
       btnRef.current.focus();
+      return;
     }
   }
 
