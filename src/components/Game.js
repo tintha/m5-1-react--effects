@@ -16,7 +16,7 @@ const items = [
 ];
 
 const Game = () => {
-  const [numCookies, setNumCookies] = useState(100);
+  const [numCookies, setNumCookies] = useState(4000);
   const [purchasedItems, setPurchasedItems] = useState({
     cursor: 0,
     megaCursor: 0,
@@ -50,6 +50,8 @@ const Game = () => {
       const itemIncrement = purchasedItems[id] + 1;
       setPurchasedItems({...purchasedItems, [id]: itemIncrement});
       setNumCookies(numCookies - cost);
+      const theItem = items.find((item) => item.id === id);
+      theItem.cost = Math.round(cost + ((10/100)*cost));
     } else {
       return window.alert(`You don't have enough cookies!`);
     }
