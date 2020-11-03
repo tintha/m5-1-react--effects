@@ -10,6 +10,7 @@ import cookieSrc from "../cookie.svg";
 
 const items = [
   { id: "cursor", name: "Cursor", cost: 10, value: 1, isFirstItem: true },
+  { id: "megaCursor", name: "MegaCursor", cost: 50, value: 5 },
   { id: "grandma", name: "Grandma", cost: 100, value: 10 },
   { id: "farm", name: "Farm", cost: 1000, value: 80 },
 ];
@@ -18,6 +19,7 @@ const Game = () => {
   const [numCookies, setNumCookies] = useState(100);
   const [purchasedItems, setPurchasedItems] = useState({
     cursor: 0,
+    megaCursor: 0,
     grandma: 0,
     farm: 0,
   });
@@ -53,8 +55,10 @@ const Game = () => {
     }
   }
 
+  const megaCursorValue = items.find((item) => item.id === 'megaCursor');
+  let value = megaCursorValue.value;
   const handleCookies = () => {
-    setNumCookies(numCookies + 1)
+    setNumCookies(numCookies + 1 + (purchasedItems.megaCursor * value));
   }
 
   useKeyDown('Space', handleCookies);
@@ -69,6 +73,8 @@ const Game = () => {
                   (purchasedItems.grandma * 10) +
                   (purchasedItems.farm * 80)}
           </strong> cookies per second
+          <br></br>
+          <strong>{1 + (purchasedItems.megaCursor * value)}</strong> cookies per click
         </Indicator>
         <Button onClick={handleCookies}>
           <Cookie src={cookieSrc} />

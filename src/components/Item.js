@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 const Item = (props) => {
   const { id, name, cost, value, isFirstItem } = props.item;
-  const { numCookies, handleClick } = props;
+  const { handleClick } = props;
   const { purchasedItems } = props;
 
   const btnRef = React.useRef(null);
@@ -24,7 +24,7 @@ const Item = (props) => {
         <LeftCol>       
           <Name>{name}</Name>
       <Text>
-        Cost: {cost} cookie(s). Produces {value} cookies/second.
+  Cost: {cost} cookie(s). Produces {value} {id == 'megaCursor' ? 'more cookies/click' : 'cookies/second'}.
       </Text>
       </LeftCol>
       <RightCol>
