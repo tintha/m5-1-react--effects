@@ -3,7 +3,7 @@ import React from 'react';
 function useKeyDown(code, callback) {
   React.useEffect(() => {
     const handleKeyPress = (e) => {
-      if (e.code === 'Space') {
+      if (e.code === code) {
         e.preventDefault();
         callback();
       }

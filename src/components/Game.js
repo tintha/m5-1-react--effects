@@ -16,7 +16,7 @@ const items = [
 ];
 
 const Game = () => {
-  const [numCookies, setNumCookies] = useState(4000);
+  const [numCookies, setNumCookies] = useState(100);
   const [purchasedItems, setPurchasedItems] = useState({
     cursor: 0,
     megaCursor: 0,
