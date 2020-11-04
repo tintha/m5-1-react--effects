@@ -51,7 +51,7 @@ const Game = () => {
       setPurchasedItems({...purchasedItems, [id]: itemIncrement});
       setNumCookies(numCookies - cost);
       const theItem = items.find((item) => item.id === id);
-      theItem.cost = Math.round(cost + ((10/100)*cost));
+      theItem.cost = Math.round(cost + (0.1*cost));
     } else {
       return window.alert(`You don't have enough cookies!`);
     }
