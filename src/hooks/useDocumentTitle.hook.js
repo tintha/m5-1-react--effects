@@ -6,7 +6,7 @@ function useDocumentTitle (title, fallbackTitle) {
     return () => {
       document.title = fallbackTitle;
     }
-  }, [title]);
+  }, [title, fallbackTitle]);
   return;
 }
 

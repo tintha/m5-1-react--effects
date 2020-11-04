@@ -24,7 +24,7 @@ const Item = (props) => {
         <LeftCol>       
           <Name>{name}</Name>
       <Text>
-  Cost: {cost} cookie(s). Produces {value} {id == 'megaCursor' ? 'more cookies/click' : 'cookies/second'}.
+  Cost: {cost} cookie(s). Produces {value} {id === 'megaCursor' ? 'more cookies/click' : 'cookies/second'}.
       </Text>
       </LeftCol>
       <RightCol>
