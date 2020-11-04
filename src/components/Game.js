@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import Item from './Item';
@@ -15,14 +15,9 @@ const items = [
   { id: "farm", name: "Farm", cost: 1000, value: 80 },
 ];
 
-const Game = () => {
-  const [numCookies, setNumCookies] = useState(100);
-  const [purchasedItems, setPurchasedItems] = useState({
-    cursor: 0,
-    megaCursor: 0,
-    grandma: 0,
-    farm: 0,
-  });
+const Game = (props) => {
+  const { numCookies, setNumCookies} = props;
+  const { purchasedItems, setPurchasedItems } = props;
 
   useInterval(() => {
     const calculateCookiesPerTick = (items) => { 
