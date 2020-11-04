@@ -10,7 +10,7 @@ import cookieSrc from "../cookie.svg";
 
 const items = [
   { id: "cursor", name: "Cursor", cost: 10, value: 1, isFirstItem: true },
-  { id: "megaCursor", name: "MegaCursor", cost: 50, value: 5 },
+  { id: "megaCursor", name: "Mega Cursor", cost: 50, value: 5 },
   { id: "grandma", name: "Grandma", cost: 100, value: 10 },
   { id: "farm", name: "Farm", cost: 1000, value: 80 },
 ];
@@ -89,7 +89,6 @@ const Game = () => {
             return <Item 
               key={item.id} 
               item={item} 
-              numCookies={numCookies} 
               purchasedItems={purchasedItems}
               handleClick={handleClick}
               />
