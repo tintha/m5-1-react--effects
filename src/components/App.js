@@ -7,7 +7,7 @@ import Game from "./Game";
 
 
 function App(props) {
-  const [numCookies, setNumCookies] = useState(0);
+  const [numCookies, setNumCookies] = useState(100);
   const [purchasedItems, setPurchasedItems] = useState({
     cursor: 0,
     megaCursor: 0,

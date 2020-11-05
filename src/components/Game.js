@@ -18,12 +18,6 @@ const items = [
 const Game = (props) => {
   const { numCookies, setNumCookies} = props;
   const { purchasedItems, setPurchasedItems } = props;
-  
-  useEffect(() => {
-    localStorage.setItem('numberOfCookies', numCookies);
-    const get = localStorage.getItem('numberOfCookies');
-    console.log(get);
-  }, [numCookies])
 
   useInterval(() => {
     const calculateCookiesPerTick = (items) => { 
