@@ -1,12 +1,13 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 
 import GlobalStyles from "./GlobalStyles";
 import Home from "./Home";
 import Game from "./Game";
 
+
 function App(props) {
-  const [numCookies, setNumCookies] = useState(100);
+  const [numCookies, setNumCookies] = useState(0);
   const [purchasedItems, setPurchasedItems] = useState({
     cursor: 0,
     megaCursor: 0,

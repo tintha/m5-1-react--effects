@@ -2,21 +2,19 @@ import React from 'react';
 import styled from 'styled-components';
 
 const Item = (props) => {
-  const { id, name, cost, value, isFirstItem } = props.item;
+  const { id, name, cost, value } = props.item;
+  const { index } = props;
   const { handleClick } = props;
   const { purchasedItems } = props;
 
   const btnRef = React.useRef(null);
-  const setUseRef = () => {
-    if (btnRef && isFirstItem === true) {
-      btnRef.current.focus();
-      return;
-    }
-  }
 
   React.useEffect(() => {
-    setUseRef();
-  }, []);
+    if (index === 0) {
+      btnRef.current.focus();
+    }
+  }, [index]);
+
 
   return (
       <Button onClick={() => {handleClick(id, cost)}} ref={btnRef}>

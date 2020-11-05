@@ -9,7 +9,7 @@ import useDocumentTitle from '../../src/hooks/useDocumentTitle.hook';
 import cookieSrc from "../cookie.svg";
 
 const items = [
-  { id: "cursor", name: "Cursor", cost: 10, value: 1, isFirstItem: true },
+  { id: "cursor", name: "Cursor", cost: 10, value: 1  },
   { id: "megaCursor", name: "Mega Cursor", cost: 50, value: 5 },
   { id: "grandma", name: "Grandma", cost: 100, value: 10 },
   { id: "farm", name: "Farm", cost: 1000, value: 80 },
@@ -18,6 +18,12 @@ const items = [
 const Game = (props) => {
   const { numCookies, setNumCookies} = props;
   const { purchasedItems, setPurchasedItems } = props;
+  
+  useEffect(() => {
+    localStorage.setItem('numberOfCookies', numCookies);
+    const get = localStorage.getItem('numberOfCookies');
+    console.log(get);
+  }, [numCookies])
 
   useInterval(() => {
     const calculateCookiesPerTick = (items) => { 
@@ -80,8 +86,9 @@ const Game = (props) => {
 
       <ItemArea>
         <SectionTitle>Items:</SectionTitle>
-          {items.map((item) => {
+          {items.map((item, index) => {
             return <Item 
+              index={index}
               key={item.id} 
               item={item} 
               purchasedItems={purchasedItems}
