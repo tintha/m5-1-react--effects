@@ -25,11 +25,9 @@ const Game = (props) => {
       const total = arrayedItems.reduce((acc, cur) => {
         if (cur[0] === 'cursor') {
           acc += cur[1] * 1;
-        }
-        if (cur[0] === 'grandma') {
+        } else if (cur[0] === 'grandma') {
           acc += cur[1] * 10;
-        }
-        if (cur[0] === 'farm') {
+        } else if (cur[0] === 'farm') {
           acc += cur[1] * 80;
         }  
         return acc;
